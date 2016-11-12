@@ -11,5 +11,9 @@
     "url": "https://git.bitrain.co/christianrank/eslint-config-christianrank.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "peerDependencies": {
+    "eslint": "^3.0.0",
+    "eslint-plugin-react": "^6.0.0"
+  },
 }
