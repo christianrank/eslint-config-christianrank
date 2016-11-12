@@ -1,0 +1,15 @@
+{
+  "name": "eslint-config-christianrank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.bitrain.co/christianrank/eslint-config-christianrank.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
