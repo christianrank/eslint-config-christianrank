@@ -269,5 +269,24 @@ module.exports = {
         // ---
         // disabled until i found out how this works right (don't know why my imports throw errors)
         'import/extensions': 'off',
+
+        // airbnb:
+        // require trailing commas in multiline object literals
+        // 'comma-dangle': ['error', {
+        //   arrays: 'always-multiline',
+        //   objects: 'always-multiline',
+        //   imports: 'always-multiline',
+        //   exports: 'always-multiline',
+        //   functions: 'always-multiline',
+        // }],
+        // ---
+        // ignore in functions because it's annoying in the map callback function
+        'comma-dangle': ['error', {
+          arrays: 'always-multiline',
+          objects: 'always-multiline',
+          imports: 'always-multiline',
+          exports: 'always-multiline',
+          functions: 'ignore',
+        }],
     },
 }
