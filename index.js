@@ -125,6 +125,7 @@ module.exports = {
         // 'react/prefer-stateless-function': 'error',
         // ---
         // disabled this because we are using react classes everywhere and will change it later...
+        // todo: change it and remove this
         'react/prefer-stateless-function': 'off',
 
         // airbnb:
@@ -163,7 +164,7 @@ module.exports = {
         // ],
         // ---
         // removed ForInStatement
-        // todo: find better alternative to iterate over Objects
+        // todo: find better alternative to iterate over objects, change code, remove this
         'no-restricted-syntax': [
           'error',
           'LabeledStatement',
