@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-christianrank",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The eslint config I'm using in my projects",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "author": "",
   "license": "MIT",
-  "devDependencies": {
+  "peerDependencies": {
     "eslint": "^3.0.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
