@@ -289,5 +289,13 @@ module.exports = {
           exports: 'always-multiline',
           functions: 'ignore',
         }],
+
+        // airbnb:
+        // require all requires be top-level
+        // http://eslint.org/docs/rules/global-require
+        // 'global-require': 'error',
+        // ---
+        // can't see anything wrong using this inline to load images into webpack using the src attribute
+        'global-require': 'off',
     },
 }
