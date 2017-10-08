@@ -297,5 +297,20 @@ module.exports = {
         // ---
         // can't see anything wrong using this inline to load images into webpack using the src attribute
         'global-require': 'off',
+
+        // airbnb:
+        // ensure <a> tags are valid
+        // 'jsx-a11y/anchor-is-valid': ['error', {
+        //   components: ['Link'],
+        //   specialLink: [],
+        //   aspects: ['noHref', 'invalidHref', 'preferButton'],
+        // }],
+        // ---
+        // I don't want my <Link> components to have a `href` attribute because they already have `to`
+        'jsx-a11y/anchor-is-valid': ['error', {
+          components: [],
+          specialLink: [],
+          aspects: ['noHref', 'invalidHref', 'preferButton'],
+        }],
     },
 }
