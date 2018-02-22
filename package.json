@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/christianrank/eslint-config-christianrank.git"
   },
-  "author": "",
+  "author": "Christian Rank",
   "license": "MIT",
   "peerDependencies": {
     "eslint": "^4.15.0",
