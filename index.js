@@ -76,7 +76,7 @@ module.exports = {
         // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
         // 'react/prefer-stateless-function': ['error', { ignorePureComponents: true }],
         // ---
-        // disabled this because I are using react classes everywhere and will change it later...
+        // disabled this because I am using react classes everywhere and will change it later...
         // todo: change it and remove this
         'react/prefer-stateless-function': 'off',
 
