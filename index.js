@@ -166,5 +166,14 @@ module.exports = {
         // ---
         // I like to have no semicolons
         semi: ['error', 'never'],
+
+        // airbnb:
+        // enforce consistent line breaks inside function parentheses
+        // https://eslint.org/docs/rules/function-paren-newline
+        // 'function-paren-newline': ['error', 'multiline'],
+        // ---
+        // This rule prevents me to write more readable exports in multiple lines,
+        // but still I want to enforce consistent newlines.
+        'function-paren-newline': ['error', 'consistent'],
     },
 }
