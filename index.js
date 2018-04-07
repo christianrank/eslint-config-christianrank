@@ -10,14 +10,12 @@ module.exports = {
   },
 
   rules: {
-    // airbnb:
     // disallow declaration of variables that are not used in the code
     // 'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
     // ---
     // changed because I don't always want to use all function variables I declare
     'no-unused-vars': ['error', { vars: 'local', args: 'none' }],
 
-    // airbnb:
     // specify the maximum length of a line in your program
     // https://eslint.org/docs/rules/max-len
     // 'max-len': ['error', 100, 2, {
@@ -37,7 +35,6 @@ module.exports = {
       ignoreTemplateLiterals: true,
     }],
 
-    // airbnb:
     // require function expressions to have a name
     // 'func-names': 'warn',
     // ---
@@ -45,7 +42,6 @@ module.exports = {
     // todo: check how this can be useful and change later or remove this todo
     'func-names': 'off',
 
-    // airbnb:
     // ensure imports point to files/modules that can be resolved
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
     // 'import/no-unresolved': ['error', { commonjs: true, caseSensitive: true }],
@@ -54,7 +50,6 @@ module.exports = {
     // and I don't know how to handle them correctly. webpack will complain about wrong imports anyway.
     'import/no-unresolved': 'off',
 
-    // airbnb:
     // require a capital letter for constructors
     // 'new-cap': ['error', {
     //   newIsCap: true,
@@ -71,7 +66,6 @@ module.exports = {
       capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List', 'CSSModules'],
     }],
 
-    // airbnb:
     // Require stateless functions when not using lifecycle methods, setState or ref
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
     // 'react/prefer-stateless-function': ['error', { ignorePureComponents: true }],
@@ -80,7 +74,6 @@ module.exports = {
     // todo: change it and remove this
     'react/prefer-stateless-function': 'off',
 
-    // airbnb:
     // disallow dangling underscores in identifiers
     // 'no-underscore-dangle': ['error', {
     //   allow: [],
@@ -92,7 +85,6 @@ module.exports = {
     // disabled this because my mongodb objects contain _id wich I don't want to change for now
     'no-underscore-dangle': 'off',
 
-    // airbnb:
     // require parens in arrow function arguments
     // http://eslint.org/docs/rules/arrow-parens
     // 'arrow-parens': ['error', 'as-needed', {
@@ -102,7 +94,6 @@ module.exports = {
     // I am a brace and I find this offensive.
     'arrow-parens': ['error', 'always'],
 
-    // airbnb:
     // Forbid the use of extraneous packages
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
     // paths are treated both as absolute paths, and relative to process.cwd()
@@ -133,7 +124,6 @@ module.exports = {
     // and I don't know how to handle them correctly. webpack will complain about wrong imports anyway.
     'import/no-extraneous-dependencies': 'off',
 
-    // airbnb:
     // Ensure consistent use of file extension within the import path
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
     // 'import/extensions': ['error', 'always', {
@@ -145,7 +135,6 @@ module.exports = {
     // disabled until I found out how this works right (don't know why my imports throw errors)
     'import/extensions': 'off',
 
-    // airbnb:
     // ensure <a> tags are valid
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/0745af376cdc8686d85a361ce36952b1fb1ccf6e/docs/rules/anchor-is-valid.md
     // 'jsx-a11y/anchor-is-valid': ['error', {
@@ -160,14 +149,12 @@ module.exports = {
       aspects: ['noHref', 'invalidHref', 'preferButton'],
     }],
 
-    // airbnb:
     // require or disallow use of semicolons instead of ASI
     // semi: ['error', 'always'],
     // ---
     // I like to have no semicolons
     semi: ['error', 'never'],
 
-    // airbnb:
     // enforce consistent line breaks inside function parentheses
     // https://eslint.org/docs/rules/function-paren-newline
     // 'function-paren-newline': ['error', 'multiline'],
@@ -175,5 +162,20 @@ module.exports = {
     // This rule prevents me to write more readable exports in multiple lines,
     // but still I want to enforce consistent newlines.
     'function-paren-newline': ['error', 'consistent'],
+
+    // Forbid certain propTypes (any, array, object)
+    // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/forbid-prop-types.md
+    // 'react/forbid-prop-types': ['error', {
+    //   forbid: ['any', 'array', 'object'],
+    //   checkContextTypes: true,
+    //   checkChildContextTypes: true,
+    // }],
+    // ---
+    // Allow objects to use them e.g. for history / location / state props when using withRouter
+    'react/forbid-prop-types': ['error', {
+      forbid: ['any', 'array'],
+      checkContextTypes: true,
+      checkChildContextTypes: true,
+    }],
   },
 }
