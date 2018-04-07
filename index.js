@@ -162,5 +162,20 @@ module.exports = {
     // This rule prevents me to write more readable exports in multiple lines,
     // but still I want to enforce consistent newlines.
     'function-paren-newline': ['error', 'consistent'],
+
+    // Forbid certain propTypes (any, array, object)
+    // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/forbid-prop-types.md
+    // 'react/forbid-prop-types': ['error', {
+    //   forbid: ['any', 'array', 'object'],
+    //   checkContextTypes: true,
+    //   checkChildContextTypes: true,
+    // }],
+    // ---
+    // Allow objects to use them e.g. for history / location / state props when using withRouter
+    'react/forbid-prop-types': ['error', {
+      forbid: ['any', 'array'],
+      checkContextTypes: true,
+      checkChildContextTypes: true,
+    }],
   },
 }
