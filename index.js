@@ -13,7 +13,7 @@ module.exports = {
     // disallow declaration of variables that are not used in the code
     // 'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
     // ---
-    // changed because I don't always want to use all function variables I declare
+    // Changed because I don't always want to use all function variables I declare.
     'no-unused-vars': ['error', { vars: 'local', args: 'none' }],
 
     // specify the maximum length of a line in your program
@@ -26,7 +26,7 @@ module.exports = {
     //   ignoreTemplateLiterals: true,
     // }],
     // ---
-    // changed to only throw a warning and a longer line length of 120
+    // Changed to only throw a warning and a longer line length of 120.
     'max-len': ['warn', 120, 4, {
       ignoreUrls: true,
       ignoreComments: false,
@@ -36,9 +36,10 @@ module.exports = {
     }],
 
     // require function expressions to have a name
+    // https://eslint.org/docs/rules/func-names
     // 'func-names': 'warn',
     // ---
-    // changed because I don't enforce function names
+    // Changed because I don't enforce function names.
     // todo: check how this can be useful and change later or remove this todo
     'func-names': 'off',
 
@@ -46,7 +47,7 @@ module.exports = {
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
     // 'import/no-unresolved': ['error', { commonjs: true, caseSensitive: true }],
     // ---
-    // disabled because I have extended resolve module modulesDirectories in my webpack config,
+    // Disabled because I have extended resolve module modulesDirectories in my webpack config,
     // and I don't know how to handle them correctly. webpack will complain about wrong imports anyway.
     'import/no-unresolved': 'off',
 
@@ -70,28 +71,29 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md
     // 'react/prefer-stateless-function': ['error', { ignorePureComponents: true }],
     // ---
-    // disabled this because I am using react classes everywhere and will change it later...
+    // Disabled this because I am using react classes everywhere and will change it later...
     // todo: change it and remove this
     'react/prefer-stateless-function': 'off',
 
     // disallow dangling underscores in identifiers
+    // https://eslint.org/docs/rules/no-underscore-dangle
     // 'no-underscore-dangle': ['error', {
     //   allow: [],
     //   allowAfterThis: false,
     //   allowAfterSuper: false,
-    //   enforceInMethodNames: false,
+    //   enforceInMethodNames: true,
     // }],
     // ---
     // disabled this because my mongodb objects contain _id wich I don't want to change for now
     'no-underscore-dangle': 'off',
 
     // require parens in arrow function arguments
-    // http://eslint.org/docs/rules/arrow-parens
+    // https://eslint.org/docs/rules/arrow-parens
     // 'arrow-parens': ['error', 'as-needed', {
-    //     requireForBlockBody: true,
+    //   requireForBlockBody: true,
     // }],
     // ---
-    // I am a brace and I find this offensive.
+    // In my opinion it's better readable with parens.
     'arrow-parens': ['error', 'always'],
 
     // Forbid the use of extraneous packages
@@ -103,10 +105,12 @@ module.exports = {
     //     'tests/**', // also common npm pattern
     //     'spec/**', // mocha, rspec-like pattern
     //     '**/__tests__/**', // jest pattern
+    //     '**/__mocks__/**', // jest pattern
     //     'test.{js,jsx}', // repos with a single test file
     //     'test-*.{js,jsx}', // repos with multiple top-level test files
-    //     '**/*.{test,spec}.{js,jsx}', // tests where the extension denotes that it is a test
+    //     '**/*{.,_}{test,spec}.{js,jsx}', // tests where the extension or filename suffix denotes that it is a test
     //     '**/jest.config.js', // jest config
+    //     '**/vue.config.js', // vue-cli config
     //     '**/webpack.config.js', // webpack config
     //     '**/webpack.config.*.js', // webpack config
     //     '**/rollup.config.js', // rollup config
@@ -120,19 +124,19 @@ module.exports = {
     //   optionalDependencies: false,
     // }],
     // ---
-    // disabled because I have extended resolve module modulesDirectories in my webpack config,
-    // and I don't know how to handle them correctly. webpack will complain about wrong imports anyway.
+    // Disabled because I have extended resolve module modulesDirectories in my webpack config,
+    // and I don't know how to handle them correctly. Webpack will complain about wrong imports anyway.
     'import/no-extraneous-dependencies': 'off',
 
     // Ensure consistent use of file extension within the import path
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
-    // 'import/extensions': ['error', 'always', {
+    // 'import/extensions': ['error', 'ignorePackages', {
     //   js: 'never',
     //   mjs: 'never',
     //   jsx: 'never',
     // }],
     // ---
-    // disabled until I found out how this works right (don't know why my imports throw errors)
+    // Disabled until I found out how this works right (I don't know why my imports throw errors)
     'import/extensions': 'off',
 
     // ensure <a> tags are valid
@@ -152,16 +156,8 @@ module.exports = {
     // require or disallow use of semicolons instead of ASI
     // semi: ['error', 'always'],
     // ---
-    // I like to have no semicolons
+    // I like to have no semicolons.
     semi: ['error', 'never'],
-
-    // enforce consistent line breaks inside function parentheses
-    // https://eslint.org/docs/rules/function-paren-newline
-    // 'function-paren-newline': ['error', 'multiline'],
-    // ---
-    // This rule prevents me to write more readable exports in multiple lines,
-    // but still I want to enforce consistent newlines.
-    'function-paren-newline': ['error', 'consistent'],
 
     // Forbid certain propTypes (any, array, object)
     // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/forbid-prop-types.md
@@ -171,11 +167,38 @@ module.exports = {
     //   checkChildContextTypes: true,
     // }],
     // ---
-    // Allow objects to use them e.g. for history / location / state props when using withRouter
+    // Allow objects to use them e.g. for history / location / state props when using withRouter.
     'react/forbid-prop-types': ['error', {
       forbid: ['any', 'array'],
       checkContextTypes: true,
       checkChildContextTypes: true,
     }],
+
+    // Enforce consistent usage of destructuring assignment of props, state, and context
+    // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/destructuring-assignment.md
+    // 'react/destructuring-assignment': ['error', 'always'],
+    // ---
+    // Destructuring is nice, but using it for everything is too much.
+    'react/destructuring-assignment': 'off',
+
+    // One JSX Element Per Line
+    // https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/jsx-one-expression-per-line.md
+    // 'react/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
+    // ---
+    // Sometimes I need to put multiple elements in one line, for example Icon + Text.
+    'react/jsx-one-expression-per-line': 'off',
+
+    // disallow multiple empty lines and only one newline at the end
+    // 'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 0 }],
+    // ---
+    // Doesn't make sense to allow 2 empty lines.
+    'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
+
+    // require or disallow an empty line between class members
+    // https://eslint.org/docs/rules/lines-between-class-members
+    // 'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: false }],
+    // ---
+    // Allow single line class members without a space in between.
+    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
   },
 }
