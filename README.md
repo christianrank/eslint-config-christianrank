@@ -17,17 +17,17 @@ This config is always specific to my projects, and there's a lot to improve (see
 `npm install --save-dev eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-christianrank`<br>
 
 **Yarn**<br>
-`yarn add --dev eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-christianrank`
+`yarn add -D eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-christianrank`
 
 --------------------------------------------------------------------------------
 
 # Documentation
 
-To use this config, create an `.eslint` file in your project directory with the following content:
+To use this config, create an `.eslintrc.js` file in your project directory with the following content:
 
 ```javascript
-{
-    "extends": "christianrank"
+module.exports = {
+  extends: 'christianrank',
 }
 ```
 
