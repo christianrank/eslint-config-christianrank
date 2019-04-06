@@ -200,5 +200,34 @@ module.exports = {
     // ---
     // Allow single line class members without a space in between.
     'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+
+    // Prefer destructuring from arrays and objects
+    // https://eslint.org/docs/rules/prefer-destructuring
+    // 'prefer-destructuring': ['error', {
+    //   VariableDeclarator: {
+    //     array: false,
+    //     object: true,
+    //   },
+    //   AssignmentExpression: {
+    //     array: true,
+    //     object: true,
+    //   },
+    // }, {
+    //   enforceForRenamedProperties: false,
+    // }],
+    // ---
+    // Disable error about destructuring of arrays in AssignmentExpression because it is too annoying sometimes
+    'prefer-destructuring': ['error', {
+      VariableDeclarator: {
+        array: false,
+        object: true,
+      },
+      AssignmentExpression: {
+        array: false,
+        object: true,
+      },
+    }, {
+      enforceForRenamedProperties: false,
+    }],
   },
 }
