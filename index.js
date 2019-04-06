@@ -167,9 +167,9 @@ module.exports = {
     //   checkChildContextTypes: true,
     // }],
     // ---
-    // Allow objects to use them e.g. for history / location / state props when using withRouter.
+    // Allow objects and arrays
     'react/forbid-prop-types': ['error', {
-      forbid: ['any', 'array'],
+      forbid: ['any'],
       checkContextTypes: true,
       checkChildContextTypes: true,
     }],
